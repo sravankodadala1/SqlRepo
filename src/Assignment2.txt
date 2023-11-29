@@ -1,0 +1,40 @@
+create table persons(
+	first_name varchar(30),
+	last_name varchar(30),
+	city varchar(20),
+	age int,
+	check (age<21)
+	);
+
+--1. Insert the  4 records with age less than 21 and atleast one record should have city value as “Mumbai 
+INSERT INTO persons (first_name, last_name, city, age) VALUES
+    ('Sravan', 'Kumar', 'Mumbai', 17),
+    ('Kiran', 'kumar', 'australia', 20),
+    ('kumar', 'kiran', 'sweden', 20),
+    ('Baburao', 'Wonder', 'USA', 19);
+
+--2. Insert new record where age is greter than 21
+INSERT INTO PERSONS VALUES('swati','kumari','europe',22);
+--error The INSERT statement conflicted with the CHECK constraint "CK__persons__age__3AA1AEB8". The conflict occurred in database "master", table "dbo.persons", column 'age'.  --
+
+--3. Add one more constraint in the same table where city = “Mumbai”
+
+alter table persons add constraint check_city check(city='Mumbai');
+
+--error The ALTER TABLE statement conflicted with the CHECK constraint "check_mumbai_city". The conflict occurred in database "master", table "dbo.persons", column 'city'. --
+
+--4. Insert one more record where city = “jaipur” and give the result
+
+insert into persons value('jagan','mohan','jaipur',20);
+
+--5. Drop both the Constraints.
+
+alter table persons drop constraint CK__persons__age__3AA1AEB8;
+
+--6. create view where city=mumbai
+
+create view mumbai_view as
+select * from persons
+where city = 'Mumbai'
+
+
