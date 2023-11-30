@@ -1,1 +1,1 @@
-# SqlRepo
+# Sql Assignment Queries
