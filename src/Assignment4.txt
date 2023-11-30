@@ -4,7 +4,7 @@ create table dept_tbl(
 	salary int
 	);
 
--- insert given records from the table
+-- insert given records from the table 
 
 insert into dept_tbl (id_deptname,emp_name,salary) values
 	('1111-MATH', 'RAHUL', 10000),
