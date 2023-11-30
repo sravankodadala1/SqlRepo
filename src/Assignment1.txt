@@ -104,7 +104,7 @@ select distinct userid from users;
 --14. change column name from product table as price_values from price
 EXEC sp_rename 'product.price', 'price_value', 'COLUMN';
 
---15. Change the Column value product_name – Ipad to Iphone from product table 
+--15. Change the Column value product_name â€“ Ipad to Iphone from product table 
 update product set product_name='Iphone'
 where product_name='Ipad'
 
