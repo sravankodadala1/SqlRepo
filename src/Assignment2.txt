@@ -1,12 +1,12 @@
 create table persons(
 	first_name varchar(30),
 	last_name varchar(30),
-	city varchar(20),
+	city varchar(20), 
 	age int,
 	check (age<21)
 	);
 
---1. Insert the  4 records with age less than 21 and atleast one record should have city value as “Mumbai 
+--1. Insert the  4 records with age less than 21 and atleast one record should have city value as â€œMumbai 
 INSERT INTO persons (first_name, last_name, city, age) VALUES
     ('Sravan', 'Kumar', 'Mumbai', 17),
     ('Kiran', 'kumar', 'australia', 20),
@@ -17,13 +17,13 @@ INSERT INTO persons (first_name, last_name, city, age) VALUES
 INSERT INTO PERSONS VALUES('swati','kumari','europe',22);
 --error The INSERT statement conflicted with the CHECK constraint "CK__persons__age__3AA1AEB8". The conflict occurred in database "master", table "dbo.persons", column 'age'.  --
 
---3. Add one more constraint in the same table where city = “Mumbai”
+--3. Add one more constraint in the same table where city = â€œMumbaiâ€
 
 alter table persons add constraint check_city check(city='Mumbai');
 
 --error The ALTER TABLE statement conflicted with the CHECK constraint "check_mumbai_city". The conflict occurred in database "master", table "dbo.persons", column 'city'. --
 
---4. Insert one more record where city = “jaipur” and give the result
+--4. Insert one more record where city = â€œjaipurâ€ and give the result
 
 insert into persons value('jagan','mohan','jaipur',20);
 
